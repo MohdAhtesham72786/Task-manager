@@ -1,0 +1,53 @@
+{
+  "info": {
+    "name": "Task Manager API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get all tasks",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8000/api/tasks/"
+      }
+    },
+    {
+      "name": "Get task by ID",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8000/api/tasks/1"
+      }
+    },
+    {
+      "name": "Create task",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Prepare demo\",\n  \"description\": \"Show CRUD flow\",\n  \"status\": \"Pending\",\n  \"due_date\": \"2026-11-12\"\n}"
+        },
+        "url": "http://localhost:8000/api/tasks/"
+      }
+    },
+    {
+      "name": "Update task",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Prepare demo\",\n  \"description\": \"Updated description\",\n  \"status\": \"Completed\",\n  \"due_date\": \"2026-11-12\"\n}"
+        },
+        "url": "http://localhost:8000/api/tasks/1"
+      }
+    },
+    {
+      "name": "Delete task",
+      "request": {
+        "method": "DELETE",
+        "url": "http://localhost:8000/api/tasks/1"
+      }
+    }
+  ]
+}
